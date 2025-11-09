@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai"
 import { notify } from '../components/enhanced/NotificationSystem'
 import { SIMPLE_CHATBOT_CONFIG } from '../config/simpleConfig.js'
-import { emailService } from './emailService'
+import { sendEmail } from './simpleEmailService'
 
 // Initialize Google Gemini AI with API key from environment variables
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyDZkqbG1lUIYirzskN2rA0Ue8uOfNPOrFU'

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, CheckCircle, User, Mail, Phone, MessageSquare, Briefcase } from 'lucide-react'
+import { sendConsultationBooking } from '../services/simpleEmailService'
 
 const Consultation = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ const Consultation = () => {
   
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
 
   const handleInputChange = (e) => {
     setFormData({
@@ -26,13 +28,27 @@ const Consultation = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsLoading(true)
+    console.log('📅 Consultation form submitted with data:', formData)
     
-    // Simulate form submission
-    setTimeout(() => {
+    setIsLoading(true)
+    setSubmitStatus('')
+    
+    try {
+      const result = await sendConsultationBooking(formData)
+      console.log('📧 Consultation email result:', result)
+
+      if (result.success) {
+        setIsSubmitted(true)
+        setSubmitStatus('success')
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Consultation form error:', error)
+      setSubmitStatus('error')
+    } finally {
       setIsLoading(false)
-      setIsSubmitted(true)
-    }, 2000)
+    }
   }
 
   const timeSlots = [
