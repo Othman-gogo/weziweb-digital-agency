@@ -8,6 +8,8 @@ A comprehensive digital agency platform specializing in AI automation, web devel
 
 **Visit:** [https://othman-gogo.github.io/weziweb-digital-agency/](https://othman-gogo.github.io/weziweb-digital-agency/)
 
+> **Status:** Deployed and Live ✅
+
 ## 🎯 Features
 
 ### ✨ **Core Services**
