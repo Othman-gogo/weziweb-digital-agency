@@ -133,7 +133,7 @@ Provide a helpful response about WeziWeb's services:`
       } else if (!leadData.email) {
         fallbackMessage = `Nice to meet you ${leadData.name}! What's your email address? Othman will send you his portfolio examples.`
       } else {
-        fallbackMessage += `Thanks ${leadData.name}! Othman builds websites, automation, and marketing solutions. Contact: othman.taoufik2000@gmail.com 🚀`
+        fallbackMessage += `Thanks ${leadData.name}! Othman builds websites, automation, and marketing solutions. Contact: othman.taoufik20000@gmail.com 🚀`
       }
       
       const fallbackResponse = {

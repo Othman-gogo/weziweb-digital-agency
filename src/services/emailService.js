@@ -5,7 +5,7 @@ import { notify, notificationPresets } from '../components/enhanced/Notification
 const EMAILJS_SERVICE_ID = 'service_l9ih3ca' // Your actual EmailJS service ID
 const EMAILJS_TEMPLATE_ID = 'template_cxelb0k' // Your actual EmailJS template ID
 const EMAILJS_PUBLIC_KEY = 'mDabFQLvIth7thgGU' // Your actual EmailJS public key
-const ADMIN_EMAIL = 'othman.taoufik2000@gmail.com' // Your working email for backend data collection
+const ADMIN_EMAIL = 'othman.taoufik20000@gmail.com' // Your working email with EmailJS configured
 
 // Initialize EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY)
@@ -108,7 +108,7 @@ class EmailService {
 
       const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
-        'contact_template', // Different template for contact messages
+        EMAILJS_TEMPLATE_ID, // Use the same template for all communications
         templateParams
       )
 
@@ -232,7 +232,7 @@ Follow up within 24 hours for best results.
 
       const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
-        'newsletter_template',
+        EMAILJS_TEMPLATE_ID, // Use same template for consistency
         templateParams
       )
 

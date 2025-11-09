@@ -41,6 +41,11 @@ const Contact = () => {
       url: "https://www.linkedin.com/in/othman-taoufik-b992721a0/"
     },
     {
+      icon: <Twitter className="w-5 h-5" />,
+      name: "X (Twitter)",
+      url: "https://x.com/othmantaou"
+    },
+    {
       icon: <Github className="w-5 h-5" />,
       name: "GitHub",
       url: "https://github.com/Othman-gogo"

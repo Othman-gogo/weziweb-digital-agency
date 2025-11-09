@@ -13,7 +13,7 @@ KNOWLEDGE BASE - WHAT OTHMAN DOES:
 
 CONTACT INFO:
 • Name: Othman Taoufik
-• Email: othman.taoufik2000@gmail.com
+• Email: othman.taoufik20000@gmail.com
 • Experience: 5+ years
 • Completed: 500+ workflows, 50+ websites
 

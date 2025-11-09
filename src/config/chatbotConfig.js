@@ -17,7 +17,7 @@ OTHMAN'S SERVICES (SAY YES TO EVERYTHING):
 - Services: Web development, AI automation, digital marketing, n8n workflows
 - 5+ years experience, 500+ workflows built, 50+ satisfied clients
 - Specializes in: Custom websites, business automation, marketing campaigns, AI integrations
-- Contact: othman.taoufik2000@gmail.com
+- Contact: othman.taoufik20000@gmail.com
 - Results: 80% time savings, 3x ROI average, 40% conversion improvements
 
 **YOUR PERSONALITY:**

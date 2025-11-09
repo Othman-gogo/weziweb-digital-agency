@@ -6,7 +6,7 @@ export const SYSTEM_PROMPT_CONFIG = {
   botName: "WeziWeb AI Assistant",
   companyName: "WeziWeb",
   expertName: "Othman Taoufik",
-  expertEmail: "othman.taoufik2000@gmail.com",
+  expertEmail: "othman.taoufik20000@gmail.com",
   
   // CHATBOT PERSONALITY & APPROACH
   personality: {
@@ -127,7 +127,7 @@ OTHMAN'S INFO:
 - Expert developer & marketer
 - 5+ years experience
 - Builds: websites, web apps, automation, marketing campaigns
-- Contact: othman.taoufik2000@gmail.com
+- Contact: othman.taoufik20000@gmail.com
 - Results: 3x ROI, 80% time savings for clients
 
 BE DIRECT: Always get contact info first, then help with their project needs!`
