@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  color: #333; 
+  margin: 0; 
+  padding: 0;
+}
+.container { 
+  max-width: 600px; 
+  margin: 0 auto; 
+  background: #ffffff;
+}
+.header { 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+  color: white; 
+  padding: 30px 20px; 
+  text-align: center; 
+}
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+.header h2 {
+  margin: 10px 0 0 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+.content { 
+  padding: 30px 20px; 
+}
+.info-section { 
+  background: #f8f9fa; 
+  border-left: 4px solid #667eea; 
+  padding: 20px; 
+  margin: 20px 0; 
+  border-radius: 5px;
+}
+.info-section h3 {
+  margin: 0 0 15px 0;
+  color: #667eea;
+  font-size: 16px;
+}
+.info-row {
+  margin: 8px 0;
+}
+.label {
+  font-weight: bold;
+  color: #333;
+}
+.footer { 
+  background: #f1f3f4; 
+  padding: 20px; 
+  text-align: center; 
+  font-size: 12px; 
+  color: #666;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🚀 WeziWeb Digital Agency</h1>
+    <h2>New Message from {{from_name}}</h2>
+  </div>
+  
+  <div class="content">
+    <div class="info-section">
+      <h3>📋 Contact Information</h3>
+      <div class="info-row">
+        <span class="label">Name:</span> {{from_name}}
+      </div>
+      <div class="info-row">
+        <span class="label">Email:</span> {{from_email}}
+      </div>
+      <div class="info-row">
+        <span class="label">Phone:</span> {{phone}}
+      </div>
+      <div class="info-row">
+        <span class="label">Company:</span> {{company}}
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h3>📝 Message Details</h3>
+      <div class="info-row">
+        <span class="label">Subject:</span> {{subject}}
+      </div>
+      <div class="info-row">
+        <span class="label">Message:</span><br>
+        {{message}}
+      </div>
+      <div class="info-row">
+        <span class="label">Challenge/Requirements:</span><br>
+        {{challenge}}
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h3>📅 Consultation Preferences</h3>
+      <div class="info-row">
+        <span class="label">Preferred Time Slot:</span> {{time_slot}}
+      </div>
+      <div class="info-row">
+        <span class="label">Budget Range:</span> {{budget}}
+      </div>
+      <div class="info-row">
+        <span class="label">Timeline/Urgency:</span> {{urgency}}
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h3>⏰ Additional Information</h3>
+      <div class="info-row">
+        <span class="label">Timestamp:</span> {{timestamp}}
+      </div>
+      <div class="info-row">
+        <span class="label">Form Type:</span> {{form_type}}
+      </div>
+      <div class="info-row">
+        <span class="label">Reply To:</span> {{reply_to}}
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><strong>WeziWeb Digital Agency</strong></p>
+    <p>This email was sent from the WeziWeb contact system</p>
+    <p>Reply to this email to respond directly to: {{from_email}}</p>
+  </div>
+</div>
+</body>
+</html>

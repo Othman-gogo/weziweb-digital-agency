@@ -1,0 +1,26 @@
+🚀 WeziWeb Digital Agency - New Contact
+
+📋 CONTACT INFORMATION
+Name: {{from_name}}
+Email: {{from_email}}
+Phone: {{phone}}
+Company: {{company}}
+
+📝 MESSAGE DETAILS
+Subject: {{subject}}
+Message: {{message}}
+Challenge/Requirements: {{challenge}}
+
+📅 CONSULTATION PREFERENCES
+Preferred Time: {{time_slot}}
+Budget Range: {{budget}}
+Timeline: {{urgency}}
+
+⏰ ADDITIONAL INFO
+Timestamp: {{timestamp}}
+Form Type: {{form_type}}
+Reply To: {{reply_to}}
+
+---
+This email was sent from WeziWeb Digital Agency contact system.
+Reply to this email to respond directly to the sender.
