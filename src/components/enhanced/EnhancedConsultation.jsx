@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, Clock, CheckCircle, User, Mail, Phone, MessageSquare, Briefcase, Sparkles, Target, TrendingUp, Zap } from 'lucide-react'
 import { gsap } from 'gsap'
-import { emailService } from '../../services/emailService'
+import { sendConsultationBooking, testEmailSetup } from '../../services/simpleEmailService'
 import { notify } from '../enhanced/NotificationSystem'
 
 const EnhancedConsultation = () => {
@@ -79,7 +79,7 @@ const EnhancedConsultation = () => {
       if (!formData.name.trim()) newErrors.name = 'Name is required'
       if (!formData.email.trim()) {
         newErrors.email = 'Email is required'
-      } else if (!emailService.isValidEmail(formData.email)) {
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address'
       }
       if (!formData.company.trim()) newErrors.company = 'Company is required'
@@ -132,7 +132,7 @@ const EnhancedConsultation = () => {
     setIsLoading(true)
 
     try {
-      const result = await emailService.sendConsultationRequest(formData)
+      const result = await sendConsultationBooking(formData)
       
       if (result.success) {
         setIsSubmitted(true)

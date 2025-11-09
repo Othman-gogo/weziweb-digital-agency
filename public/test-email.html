@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS Test - WeziWeb</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .button { background: #667eea; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px 0; }
+        .result { margin: 20px 0; padding: 15px; border-radius: 5px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🧪 EmailJS Test for WeziWeb</h1>
+    <p>This page tests the email functionality using your EmailJS configuration.</p>
+    
+    <button class="button" onclick="testEmail()">🚀 Test Email Send</button>
+    <button class="button" onclick="testConsultation()">📅 Test Consultation Booking</button>
+    
+    <div id="results"></div>
+
+    <script>
+        // EmailJS Configuration
+        const CONFIG = {
+            serviceId: 'service_l9ih3ca',
+            templateId: 'template_cxelb0k',
+            publicKey: 'mDabFQLvIth7thgGU'
+        }
+
+        // Initialize EmailJS
+        emailjs.init(CONFIG.publicKey);
+        console.log('EmailJS initialized with public key:', CONFIG.publicKey);
+
+        function showResult(message, isSuccess = true) {
+            const resultsDiv = document.getElementById('results');
+            const resultElement = document.createElement('div');
+            resultElement.className = `result ${isSuccess ? 'success' : 'error'}`;
+            resultElement.innerHTML = `
+                <strong>${isSuccess ? '✅ Success:' : '❌ Error:'}</strong> 
+                ${message}
+                <br><small>Time: ${new Date().toLocaleString()}</small>
+            `;
+            resultsDiv.appendChild(resultElement);
+        }
+
+        async function testEmail() {
+            console.log('🧪 Testing basic email send...');
+            
+            const testParams = {
+                to_name: 'Othman Taoufik',
+                from_name: 'Test User',
+                from_email: 'test@example.com',
+                reply_to: 'test@example.com',
+                phone: '+212 666 580 883',
+                company: 'Test Company',
+                subject: 'EmailJS Test Email',
+                message: 'This is a test email to verify EmailJS is working correctly.',
+                timestamp: new Date().toLocaleString(),
+                form_type: 'Email Test'
+            };
+
+            try {
+                console.log('Sending with params:', testParams);
+                const result = await emailjs.send(CONFIG.serviceId, CONFIG.templateId, testParams, CONFIG.publicKey);
+                console.log('Email sent successfully:', result);
+                showResult(`Email sent successfully! Status: ${result.status}. Check othman.taoufik20000@gmail.com`, true);
+            } catch (error) {
+                console.error('Email failed:', error);
+                showResult(`Email failed: ${error.message || error}`, false);
+            }
+        }
+
+        async function testConsultation() {
+            console.log('📅 Testing consultation booking...');
+            
+            const consultationParams = {
+                to_name: 'Othman Taoufik',
+                from_name: 'John Doe',
+                from_email: 'john@testcompany.com',
+                reply_to: 'john@testcompany.com',
+                phone: '+1234567890',
+                company: 'Test Company Inc',
+                subject: 'Consultation Booking Request',
+                message: 'I would like to discuss web development services for my business.',
+                challenge: 'Need a modern website with e-commerce functionality',
+                time_slot: 'Morning (9AM - 12PM)',
+                budget: '$5000 - $10000',
+                urgency: 'Within 1 month',
+                timestamp: new Date().toLocaleString(),
+                form_type: 'Consultation Booking'
+            };
+
+            try {
+                console.log('Sending consultation with params:', consultationParams);
+                const result = await emailjs.send(CONFIG.serviceId, CONFIG.templateId, consultationParams, CONFIG.publicKey);
+                console.log('Consultation email sent:', result);
+                showResult(`Consultation booking sent successfully! Status: ${result.status}. Check your email!`, true);
+            } catch (error) {
+                console.error('Consultation email failed:', error);
+                showResult(`Consultation email failed: ${error.message || error}`, false);
+            }
+        }
+
+        // Show configuration on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showResult(`EmailJS Config - Service: ${CONFIG.serviceId}, Template: ${CONFIG.templateId}, Key: ${CONFIG.publicKey}`, true);
+        });
+    </script>
+</body>
+</html>
