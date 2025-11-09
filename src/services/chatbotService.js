@@ -4,7 +4,7 @@ import { SIMPLE_CHATBOT_CONFIG } from '../config/simpleConfig.js'
 import { emailService } from './emailService'
 
 // Initialize Google Gemini AI with API key from environment variables
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyDXb7K1vK9ZmK8cJ5fQ9y3H7jL2N6mP0wX4'
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyDZkqbG1lUIYirzskN2rA0Ue8uOfNPOrFU'
 const ai = new GoogleGenAI({
   apiKey: API_KEY
 })
